@@ -1,7 +1,25 @@
-# dm.mqtt
-Website only
+Kafka MQTT Bridge
+=================
+
 
 ```
-docker build -t mqtt.marine.ie .
+docker build -t 127.0.0.1:5000/mqttbridge .  
 
+docker push 127.0.0.1:5000/mqttbridge
+
+docker service create \
+         --name mqttbridge --publish 1880:80 --publish 1883:1883 \
+         --host kafka01:172.17.1.86 \
+         --host kafka02:172.17.1.87 \
+         --host kafka03:172.17.1.88 \
+        127.0.0.1:5000/mqttbridge
 ```
+
+Credits
+-------
+
+* [Matteo Collina](//twitter.com/matteocollina)
+* [Robert Fuller](//github.com/fullergalway)
+* [Adam Leadbetter](//twitter.com/adamleadbetter)
+* [Damian Smyth](//ie.linkedin.com/in/damian-smyth-4b85563)
+* [Eoin O'Grady](//ie.linkedin.com/in/eoin-o-grady-6177b)

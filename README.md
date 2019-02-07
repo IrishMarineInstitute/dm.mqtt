@@ -22,8 +22,8 @@ docker service create \
 fred
 /home/fred$ read password
 supersecret
-/home/fred$ echo "$username$password"
-ccae0aeeaf620eee8dd7f81e4598ca12  -
+/home/fred$ echo -n "$username$password" | md5sum
+111af84799aaf1efd096c03e3275aad6  -
 ```
 
 Credits

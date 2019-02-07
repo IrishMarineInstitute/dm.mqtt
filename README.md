@@ -15,6 +15,17 @@ docker service create \
         127.0.0.1:5000/mqttbridge
 ```
 
+# Updating auth.json file you need to create a hash from usernamepassword
+# For example:
+```
+/home/fred$ read username
+fred
+/home/fred$ read password
+supersecret
+/home/fred$ echo "$username$password"
+ccae0aeeaf620eee8dd7f81e4598ca12  -
+```
+
 Credits
 -------
 
